@@ -9,7 +9,7 @@ COPY . /app
 
 # Install packages in requirements.txt
 COPY requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN mkdir -p /.cache/huggingface/hub && \
     chmod -R 755 /.cache/huggingface/hub && \
