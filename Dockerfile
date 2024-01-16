@@ -14,7 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir -p /.cache/huggingface/hub && \
     chmod -R 755 /.cache/huggingface/hub && \
     mkdir -p /.cache/torch/sentence_transformers/sentence-transformers_all-mpnet-base-v2 && \
-    chmod -R 755 /.cache/torch/sentence_transformers/sentence-transformers_all-mpnet-base-v2
+    chmod -R 755 /.cache/torch/sentence_transformers/sentence-transformers_all-mpnet-base-v2 && \
+    chown -R 1000720001:1000720001 /.cache
 
 EXPOSE 8501
 
