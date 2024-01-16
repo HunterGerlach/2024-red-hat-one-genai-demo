@@ -1,0 +1,16 @@
+credentials:
+  usernames:
+    jsmith:
+      name: John Smith
+      password: $2y$10$wVA9Hsl8auRTEEcT.vn0.O84lnvKKoklmm1uhBkH.cC8piRLG9XBu
+    rbriggs:
+      email: rbriggs@abcdddd.com
+      name: Rebecca Briggs
+      password: $2y$10$wVA9Hsl8auRTEEcT.vn0.O84lnvKKoklmm1uhBkH.cC8piRLG9XBu
+cookie:
+  expiry_days: 30
+  key: cfXedfsw123dvEd # Must be string
+  name: chat_doc_v1_abe
+preauthorized:
+  emails:
+  - melsby@abcdddd.com
