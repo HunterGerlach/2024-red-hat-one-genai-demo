@@ -13,8 +13,8 @@ RUN pip install -r requirements.txt
 
 RUN mkdir -p /.cache/huggingface/hub && \
     chmod -R 755 /.cache/huggingface/hub && \
-    mkdir -p /.cache/torch && \
-    chmod -R 755 /.cache/torch
+    mkdir -p /.cache/torch/sentence_transformers && \
+    chmod -R 755 /.cache/torch/sentence_transformers && \
 
 EXPOSE 8501
 
