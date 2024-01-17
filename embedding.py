@@ -46,7 +46,7 @@ class DocEmbedding:
             self.embeddings,
             redis_url=redis_url,
             index_name=index_name,
-            schema=schema
+            schema=schema,
         )
         retriever = rds.as_retriever(search_type="similarity",
                                      search_kwargs={"k": 4, "similarity": 0.3})

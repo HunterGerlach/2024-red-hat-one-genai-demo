@@ -1,13 +1,14 @@
 streamlit==1.28.2
 streamlit-chat==0.1.1
 streamlit-authenticator==0.2.3
-langchain~=0.0.339
+streamlit-pydantic==0.6.0
+langchain==0.0.354
 pypdf==3.17.1
-tiktoken~=0.5.1
+tiktoken==0.5.2
 text-generation==0.6.1
 sentence-transformers==2.2.2
-pydantic==2.5.1
-pydantic-core==2.14.3
+# pydantic==2.5.1
+# pydantic-core==2.14.3
 requests==2.31.0
 python-certifi-win32==1.6.1
 pypdfium2==4.24.0
