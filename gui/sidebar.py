@@ -10,7 +10,7 @@ from embedding import DocEmbedding
 
 
 class Sidebar:
-    MODEL_OPTIONS = ["Mistral-7B","llama2-70b"]
+    MODEL_OPTIONS = ["Llama-2-7b", "Mistral-7B"]
     TEMPERATURE_MIN_VALUE = 0.0
     TEMPERATURE_MAX_VALUE = 1.0
     TEMPERATURE_DEFAULT_VALUE = 0.0

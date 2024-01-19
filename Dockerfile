@@ -1,7 +1,6 @@
 # Python 3.11 runtime as a parent image
 FROM python:3.11-slim
 
-USER 1000720001
 # working directory in the container
 WORKDIR /app
 
