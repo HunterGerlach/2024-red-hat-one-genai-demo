@@ -11,14 +11,18 @@ from snowflake import SnowflakeGenerator
 
 username = os.environ.get("REDIS_USERNAME", "default")
 password = os.environ.get("REDIS_PASSWORD", "default")
-host = os.environ.get("REDIS_HOST", "10.70.101.1")
+host = os.environ.get("REDIS_HOST", "127.0.0.1")
 redis_url = f"redis://{username}:{password}@{host}:6379"
+
+inference_server_url=os.environ.get('INFERENCE_SERVER_URL',
+  'https://llama-2-7b-chat-hf-fine-tuned-predictor-rhone-chatbot-demo.apps.rosa-zpp6h.zjoc.p1.openshiftapps.com/')
 
 if __name__ == '__main__':
     st.set_page_config(layout="wide", page_icon="💬", page_title="ChatPDF")
     layout, sidebar, utils = Layout(), Sidebar(), Utilities()
 
     layout.show_header()
+    sidebar.show_logo()
     login_config = utils.load_login_details()
 
     if not login_config:
