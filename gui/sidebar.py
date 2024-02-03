@@ -10,15 +10,16 @@ from embedding import DocEmbedding
 
 
 class Sidebar:
-    MODEL_OPTIONS = ["Llama-2-7b", "Mistral-7B"]
+    MODEL_OPTIONS = ["mistral"]
     TEMPERATURE_MIN_VALUE = 0.0
     TEMPERATURE_MAX_VALUE = 1.0
     TEMPERATURE_DEFAULT_VALUE = 0.0
     TEMPERATURE_STEP = 0.01
 
     @staticmethod
-    def show_logo():
-        st.sidebar.image("./rhone.png", width=200)
+    def show_logo(config):
+        image_path = "./img/rhone-" + config['event']['location'] + ".png"
+        st.sidebar.image(image_path, width=200)
 
     @staticmethod
     def about():
@@ -94,7 +95,7 @@ class Sidebar:
 
 class Utilities:
     @staticmethod
-    def load_login_details():
+    def load_config_details():
         with open('config.yaml') as file:
             config = yaml.load(file, Loader=SafeLoader)
         return config

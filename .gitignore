@@ -1,6 +1,7 @@
 # App-specific files to ignore
 redis_schema.yaml
 .venv*
+config.yaml
 
 
 # Byte-compiled / optimized / DLL files
