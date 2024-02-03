@@ -22,4 +22,5 @@ redis:
   host: 127.0.0.1
   port: 6379
 inference_server:
+  type: ollama # Options: hf, ollama
   url: llama-example-service.my.openshift.cluster.example.com

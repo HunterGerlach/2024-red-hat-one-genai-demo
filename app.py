@@ -39,20 +39,22 @@ if __name__ == '__main__':
 
             try:
                 if 'chatbot' not in st.session_state:
-                    # llm = HuggingFaceTextGenInference(
-                    #     inference_server_url=os.environ.get('INFERENCE_SERVER_URL'),
-                    #     max_new_tokens=int(os.environ.get('MAX_NEW_TOKENS', '512')),
-                    #     top_k=int(os.environ.get('TOP_K', '10')),
-                    #     top_p=float(os.environ.get('TOP_P', '0.95')),
-                    #     typical_p=float(os.environ.get('TYPICAL_P', '0.95')),
-                    #     temperature=float(os.environ.get('TEMPERATURE', '0.9')),
-                    #     repetition_penalty=float(os.environ.get('REPETITION_PENALTY', '1.01')),
-                    #     streaming=False,
-                    #     verbose=False
-                    # )
                     
-                    llm = Ollama(model="mistral")
-
+                    if configs["inference_server"]["type"] == "ollama":
+                        llm = Ollama(model="mistral")
+                    else:
+                        llm = HuggingFaceTextGenInference(
+                            inference_server_url=os.environ.get('INFERENCE_SERVER_URL'),
+                            max_new_tokens=int(os.environ.get('MAX_NEW_TOKENS', '512')),
+                            top_k=int(os.environ.get('TOP_K', '10')),
+                            top_p=float(os.environ.get('TOP_P', '0.95')),
+                            typical_p=float(os.environ.get('TYPICAL_P', '0.95')),
+                            temperature=float(os.environ.get('TEMPERATURE', '0.9')),
+                            repetition_penalty=float(os.environ.get('REPETITION_PENALTY', '1.01')),
+                            streaming=False,
+                            verbose=False
+                        )
+                    
                     indexGenerator = SnowflakeGenerator(42)
                     index_name = str(next(indexGenerator))
                     print("Index Name: " + index_name)
